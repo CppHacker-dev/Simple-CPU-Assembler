@@ -31,7 +31,7 @@ This project provides a simple assembly language assembler that converts a speci
 1. Clone the repository:
    ```bash
    git clone https://github.com/CppHacker-dev/Simple-CPU-Assembler.git
-   cd assembly-to-binary-converter
+   cd Simple-CPU-Assembler
    ```
 
 2. Compile the code:
@@ -51,12 +51,11 @@ This project provides a simple assembly language assembler that converts a speci
 ### Example Assembly File (asm.asm)
 
 ```asm
-LDR reg0, mem0
-ADD reg1, reg0
-SUB reg2, reg1
-MUL reg3, reg2
-MOV reg4, reg3
-HLT
+LDM mem3 3 ;load the value of 3 into memory index of 3
+LDM mem2 5 ;load the value of 5 into memory index of 2
+LDR reg0 mem2 ;load memory index of 2 into register 0
+ADD reg0 mem3 ;add memory index of 3 to register 0;
+HLT ;halt the cpu
 ```
 
 ## Error Handling
