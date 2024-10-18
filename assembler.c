@@ -5,7 +5,6 @@
 
 #define MAX_LINE_LENGTH 100
 
-
 int parse_reg_or_mem(const char* operand) {
     if (strncmp(operand, "reg", 3) == 0) {
         return atoi(&operand[3]);
@@ -15,7 +14,6 @@ int parse_reg_or_mem(const char* operand) {
         return -1; 
     }
 }
-
 
 void assemble_line(const char* line, FILE *output) {
     char instruction[MAX_LINE_LENGTH];
