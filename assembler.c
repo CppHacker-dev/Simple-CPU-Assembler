@@ -99,6 +99,35 @@ void assemble_line(const char* line, FILE *output) {
         fwrite(&opcode, sizeof(uint8_t), 1, output);
         fwrite(&regnum, sizeof(uint8_t), 1, output);
         fwrite(&destreg, sizeof(uint8_t), 1, output);
+       } else if (strcmp(instruction, "AND") == 0) {
+        opcode = 0x0D;
+        regnum = parse_reg_or_mem(operand1);
+        operand = parse_reg_or_mem(operand2);
+        fwrite(&opcode, sizeof(uint8_t), 1, output);
+        fwrite(&operand, sizeof(uint8_t), 1, output);
+        fwrite(&regnum, sizeof(uint8_t), 1, output);
+   } else if (strcmp(instruction, "OR") == 0) {
+        opcode = 0x0E;
+        regnum = parse_reg_or_mem(operand1);
+        operand = parse_reg_or_mem(operand2);
+        fwrite(&opcode, sizeof(uint8_t), 1, output);
+        fwrite(&operand, sizeof(uint8_t), 1, output);
+        fwrite(&regnum, sizeof(uint8_t), 1, output);
+   } else if (strcmp(instruction, "XOR") == 0) {
+        opcode = 0x0F;
+        regnum = parse_reg_or_mem(operand1);
+        operand = parse_reg_or_mem(operand2);
+        fwrite(&opcode, sizeof(uint8_t), 1, output);
+        fwrite(&operand, sizeof(uint8_t), 1, output);
+        fwrite(&regnum, sizeof(uint8_t), 1, output);
+   } else if (strcmp(instruction, "NOT") == 0) {
+        opcode = 0x10;
+        regnum = parse_reg_or_mem(operand1);
+        operand = parse_reg_or_mem(operand2);
+        fwrite(&opcode, sizeof(uint8_t), 1, output);
+        fwrite(&operand, sizeof(uint8_t), 1, output);
+        fwrite(&regnum, sizeof(uint8_t), 1, output);
+   }
     } else {
         printf("Error: Unknown instruction %s\n", instruction);
     }
