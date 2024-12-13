@@ -21,6 +21,7 @@ This project provides a simple assembly language assembler that converts a speci
   - `NOT` (Not)
   - `XOR` (Xor)
   - `OR`  (Or)
+  - `AND` (And)
 - Processes operands in the format of registers (e.g., `reg0`, `reg1`) and memory locations (e.g., `mem0`, `mem1`).
 - Outputs binary instructions to a file for use in simulated or real hardware.
 
