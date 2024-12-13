@@ -18,6 +18,9 @@ This project provides a simple assembly language assembler that converts a speci
   - `INC` (Increment)
   - `DEC` (Decrement)
   - `MOV` (Move)
+  - `NOT` (Not)
+  - `XOR` (Xor)
+  - `OR`  (Or)
 - Processes operands in the format of registers (e.g., `reg0`, `reg1`) and memory locations (e.g., `mem0`, `mem1`).
 - Outputs binary instructions to a file for use in simulated or real hardware.
 
